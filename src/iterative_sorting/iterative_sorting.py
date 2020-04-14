@@ -14,12 +14,22 @@ def selection_sort( arr ):
         # TO-DO: swap
         arr[i] = arr[smallest_index]
         arr[smallest_index] = temp
-        
+
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    for i in range(0, len(arr) - 1):
+        temp = arr[i]
+        for j in range(0, len(arr) - 1):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j + 1]
+                arr[j + 1] = arr[j]
+                arr[j] = temp
+        
+        
+
 
     return arr
 
@@ -32,4 +42,5 @@ def count_sort( arr, maximum=-1 ):
 
 # sanity check
 myArray = [3, 4, 2, 5, 6, 10, 8, 7, 9, 1]
-print(selection_sort(myArray))
+# print(selection_sort(myArray))
+print(bubble_sort(myArray))
