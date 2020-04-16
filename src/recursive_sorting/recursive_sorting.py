@@ -4,7 +4,25 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-   
+    # Initialize pointers
+    a = 0
+    b = 0
+    for i in range(elements):
+    # Compare the first element of A and B
+        if a >= len(arrA):
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b >= len(arrB):
+            merged_arr[i] = arrA[a]
+            a += 1
+        elif arrA[a] < arrB[b]:
+            merged_arr[i] = arrA[a]
+            a += 1
+        else:
+            merged_arr[i] = arrB[b]
+            b += 1
+    # Copy the smallest to merged_arr
+        
     return merged_arr
 
 
@@ -12,12 +30,11 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     # base case
-    if len(arr) == 1:
+    if len(arr) <= 1:
         return arr
-    # divide array in half (2 arrays)
+    # split array in half (2 arrays)
     mid = len(arr)//2
-
-    #slicing here to get the left and right size
+    # Recursion happening here
     left = merge_sort(arr[:mid]) 
     right = merge_sort(arr[mid:])
 
@@ -25,6 +42,7 @@ def merge_sort( arr ):
 
 
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+print(arr1)
 print(merge_sort(arr1))
 
 
