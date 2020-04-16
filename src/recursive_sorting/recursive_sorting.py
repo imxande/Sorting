@@ -3,6 +3,7 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
+
     # TO-DO
     # Initialize pointers
     a = 0
@@ -21,7 +22,6 @@ def merge( arrA, arrB ):
         else:
             merged_arr[i] = arrB[b]
             b += 1
-    # Copy the smallest to merged_arr
         
     return merged_arr
 
@@ -38,9 +38,10 @@ def merge_sort( arr ):
     left = merge_sort(arr[:mid]) 
     right = merge_sort(arr[mid:])
 
+    # calling merge helper function to merge this two sorted array into one sorted array
     return merge(left, right)
 
-
+# sanity check
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 print(arr1)
 print(merge_sort(arr1))
