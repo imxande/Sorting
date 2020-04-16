@@ -17,7 +17,6 @@ def selection_sort( arr ):
 
     return arr
 
-
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
     # loop through n-1 elements
